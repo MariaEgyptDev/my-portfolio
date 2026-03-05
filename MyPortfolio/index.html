@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {margin:0; padding:0; box-sizing:border-box; font-family:'Arial',sans-serif;}
+        body {background-color:#f7f7f7; color:#333; line-height:1.6; scroll-behavior: smooth;}
+
+        header {
+            background-color:#2c3e50; color:white; padding:30px 0; text-align:center; position: sticky; top:0; z-index:1000;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+        header h1 {font-size:2.4rem; margin-bottom:10px;}
+        nav a {
+            color:white; text-decoration:none; margin:0 15px; font-weight:bold;
+            padding:5px 10px; border-radius:5px; transition:0.3s;
+        }
+        nav a:hover {background-color:#1a252f;}
+
+        section {
+            padding:60px 20px; max-width:900px; margin:40px auto; background: linear-gradient(135deg,#ffffff,#e6ecf0);
+            border-radius:10px; box-shadow:0 6px 15px rgba(0,0,0,0.1);
+            opacity:0; transform:translateY(50px); transition:all 0.8s ease-out;
+        }
+        section.visible {opacity:1; transform:translateY(0);}
+        section h2 {
+            font-size:2rem; margin-bottom:20px; color:#2c3e50; border-bottom:3px solid #2c3e50;
+            display:inline-block; padding-bottom:5px;
+        }
+        section p {margin-bottom:15px; font-size:1.1rem; line-height:1.8;}
+
+        .btn {
+            display:inline-block; background-color:#2c3e50; color:white; text-decoration:none;
+            padding:12px 25px; margin:8px 0; border-radius:6px; transition:0.3s;
+        }
+        .btn:hover {background-color:#1a252f; transform:translateY(-3px);}
+
+        footer {background-color:#2c3e50; color:white; text-align:center; padding:20px 0; margin-top:40px;}
+
+        a.social-link {color:#2c3e50; text-decoration:none; transition:0.3s;}
+        a.social-link:hover {text-decoration:underline; color:#1a252f;}
+
+        /* Icons */
+        .icon {margin-right:8px;}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>My Personal Portfolio</h1>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section id="about">
+    <h2>About Me <span class="icon">👩‍💻</span></h2>
+    <p>My name is <strong>Maryam</strong> <span></span>, an Egyptian programmer dedicated to improving my skills.</p>
+    <p>I am currently learning: <strong>Python 🐍, HTML 💻, CSS 🎨, JavaScript ⚡, and Java ☕</strong>.</p>
+    <p>I work with <strong>Python, HTML, and CSS</strong> to build and publish my projects online <span></span>.</p>
+</section>
+
+<section id="projects">
+    <h2>Projects <span class="icon">📁</span></h2>
+    <p>1. Python Calculator Project:</p>
+    <a class="btn" href="https://github.com/MariaEgyptDev/python-calculator" target="_blank">View on GitHub</a>
+    <p>2. Python Login System Project:</p>
+    <a class="btn" href="https://github.com/MariaEgyptDev/python-login-system" target="_blank">View on GitHub</a>
+</section>
+
+<section id="contact">
+    <h2>Contact <span class="icon">✉️</span></h2>
+    <p>Email: <a class="social-link" href="mailto:maria3del2023@gmail.com">maria3del2023@gmail.com</a></p>
+    <p>Instagram: <a class="social-link" href="https://www.instagram.com/mar.iam3del/" target="_blank">@mar.iam3del</a></p>
+</section>
+
+<footer>
+    © 2026 Maryam. All Rights Reserved.
+</footer>
+
+<script>
+    // Scroll animation for sections
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {threshold:0.2});
+    sections.forEach(section => {observer.observe(section);});
+</script>
+
+</body>
+</html>
